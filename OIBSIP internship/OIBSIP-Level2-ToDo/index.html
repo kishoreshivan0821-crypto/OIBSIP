@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My To-Do Book</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="todo-app">
+
+    <!-- HEADER -->
+
+    <header class="top-header">
+
+        <div>
+            <p class="eyebrow">PERSONAL NOTEBOOK</p>
+            <h1>My To-Do</h1>
+        </div>
+
+        <button id="newTaskButton" class="new-button">
+            + New
+        </button>
+
+    </header>
+
+
+    <!-- BOOK -->
+
+    <section class="book">
+
+        <div class="book-cover">
+
+            <div class="cover-content">
+
+                <p class="cover-small">
+                    MY PERSONAL
+                </p>
+
+                <h2>
+                    TO-DO<br>
+                    BOOK
+                </h2>
+
+                <div class="cover-line"></div>
+
+                <p class="cover-text">
+                    Plan it.<br>
+                    Write it.<br>
+                    Complete it.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="book-pages">
+
+            <div class="page-header">
+
+                <div>
+
+                    <span>MY NOTES</span>
+
+                    <h2>
+                        Tasks & Ideas
+                    </h2>
+
+                </div>
+
+                <div class="task-count">
+
+                    <strong id="pendingCount">
+                        0
+                    </strong>
+
+                    <small>
+                        Pending
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="filters">
+
+                <button
+                    class="filter active"
+                    data-filter="all">
+                    All
+                </button>
+
+                <button
+                    class="filter"
+                    data-filter="pending">
+                    Pending
+                </button>
+
+                <button
+                    class="filter"
+                    data-filter="completed">
+                    Completed
+                </button>
+
+            </div>
+
+
+            <!-- TASK LIST -->
+
+            <div id="taskList" class="task-list">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        +
+                    </div>
+
+                    <h3>
+                        Your notebook is empty
+                    </h3>
+
+                    <p>
+                        Click <b>+ New</b> to write your first note.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <footer class="book-footer">
+
+                <span id="completedCount">
+                    0 completed
+                </span>
+
+                <button id="clearCompleted">
+                    Clear completed
+                </button>
+
+            </footer>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     NEW NOTE MODAL
+========================= -->
+
+<div id="noteModal" class="modal">
+
+    <div class="paper-note">
+
+        <button
+            id="closeModal"
+            class="close-button">
+            ×
+        </button>
+
+        <p class="paper-label">
+            NEW NOTE
+        </p>
+
+        <h2 id="noteModalTitle">
+            Write your note
+        </h2>
+
+        <textarea
+            id="taskInput"
+            placeholder="Start writing..."
+            maxlength="500"></textarea>
+
+        <button
+            id="saveTask"
+            class="save-button">
+            Save Note
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     VIEW NOTE MODAL
+========================= -->
+
+<div id="viewModal" class="modal">
+
+    <div
+        id="viewPaper"
+        class="view-paper"
+        data-theme="cream">
+
+        <button
+            id="closeView"
+            class="close-button">
+            ×
+        </button>
+
+        <p class="paper-label">
+            MY NOTE
+        </p>
+
+        <h2 id="viewTitle">
+            My Task
+        </h2>
+
+        <div id="viewImageContainer"></div>
+
+        <p
+            id="viewText"
+            class="view-text">
+        </p>
+
+        <div class="view-actions">
+
+            <button
+                id="viewEdit"
+                class="secondary-button">
+                Edit Note
+            </button>
+
+            <button
+                id="viewCustomize"
+                class="save-button">
+                Customize Note
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     CUSTOMIZE MODAL
+========================= -->
+
+<div id="customizeModal" class="modal">
+
+    <div class="customize-card">
+
+        <button
+            id="closeCustomize"
+            class="close-button">
+            ×
+        </button>
+
+        <p class="paper-label">
+            CUSTOMIZE NOTE
+        </p>
+
+        <h2>
+            Make it yours
+        </h2>
+
+
+        <label for="taskTitle">
+            Headline
+        </label>
+
+        <input
+            type="text"
+            id="taskTitle"
+            placeholder="Example: Today's Goal"
+            maxlength="60">
+
+
+        <label for="taskImage">
+            Image URL
+        </label>
+
+        <input
+            type="text"
+            id="taskImage"
+            placeholder="Paste image URL">
+
+
+        <label>
+            Theme
+        </label>
+
+        <div class="theme-options">
+
+            <button
+                class="theme-option active"
+                data-theme="cream">
+                Cream
+            </button>
+
+            <button
+                class="theme-option"
+                data-theme="blue">
+                Blue
+            </button>
+
+            <button
+                class="theme-option"
+                data-theme="green">
+                Green
+            </button>
+
+            <button
+                class="theme-option"
+                data-theme="pink">
+                Rose
+            </button>
+
+        </div>
+
+
+        <button
+            id="saveCustomize"
+            class="save-button">
+            Save Changes
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

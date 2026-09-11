@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Secure Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="auth-container">
+
+        <section class="auth-card">
+
+            <div class="brand">
+                <div class="brand-icon">◈</div>
+
+                <h1>SecureSpace</h1>
+
+                <p>Your personal secure account</p>
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <div id="loginSection">
+
+                <h2>Welcome back</h2>
+
+                <p class="form-subtitle">
+                    Sign in to continue
+                </p>
+
+                <form id="loginForm">
+
+                    <label for="loginEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+
+                    <p
+                        id="loginMessage"
+                        class="message">
+                    </p>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+                        Sign In
+                    </button>
+
+                </form>
+
+
+                <p class="switch-text">
+                    Don't have an account?
+
+                    <button
+                        id="showRegister"
+                        class="link-button">
+                        Create account
+                    </button>
+                </p>
+
+            </div>
+
+
+            <!-- REGISTER -->
+
+            <div
+                id="registerSection"
+                class="hidden">
+
+                <h2>Create account</h2>
+
+                <p class="form-subtitle">
+                    Start your secure account
+                </p>
+
+
+                <form id="registerForm">
+
+                    <label for="registerName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Your name"
+                        required
+                    >
+
+
+                    <label for="registerEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+
+                    <label for="registerPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Minimum 6 characters"
+                        minlength="6"
+                        required
+                    >
+
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Repeat your password"
+                        minlength="6"
+                        required
+                    >
+
+
+                    <p
+                        id="registerMessage"
+                        class="message">
+                    </p>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+                        Create Account
+                    </button>
+
+                </form>
+
+
+                <p class="switch-text">
+                    Already have an account?
+
+                    <button
+                        id="showLogin"
+                        class="link-button">
+                        Sign in
+                    </button>
+                </p>
+
+            </div>
+
+
+            <!-- PROTECTED PAGE -->
+
+            <div
+                id="dashboardSection"
+                class="hidden dashboard">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h2>Welcome!</h2>
+
+                <p>
+                    You are securely logged in.
+                </p>
+
+                <div class="user-info">
+
+                    <span>Logged in as</span>
+
+                    <strong id="userEmail">
+                    </strong>
+
+                </div>
+
+                <button
+                    id="logoutButton"
+                    class="primary-button">
+                    Logout
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
